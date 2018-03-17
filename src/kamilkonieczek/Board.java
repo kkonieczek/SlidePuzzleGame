@@ -1,4 +1,4 @@
-package kamil.slide.puzzle.game;
+package kamilkonieczek;
 
 import java.util.ArrayList;
 import java.util.Collections;

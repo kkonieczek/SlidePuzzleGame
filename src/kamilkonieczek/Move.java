@@ -1,4 +1,4 @@
-package kamil.slide.puzzle.game;
+package kamilkonieczek;
 
 public enum Move {			// list of moves than can be assigned to a tile
 	EMPTY,
