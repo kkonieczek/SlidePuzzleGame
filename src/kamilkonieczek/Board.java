@@ -9,9 +9,7 @@ import java.util.Collections;
 
 public class Board {
 	// public fields
-	
-	
-	// private fields
+
 	public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
 	
 	//public methods	
@@ -25,7 +23,7 @@ public class Board {
 		System.out.println("-----------------");
 		for(int i = 0 ; i <3; i++) {
 			for(int j = 0 ; j <3; j++) {
-				System.out.printf("|| %d ", tiles.get(k).getID());
+				System.out.printf("|| %s ", tiles.get(k).getID());
 				k++;
 			}
 			System.out.println("||");
@@ -33,11 +31,11 @@ public class Board {
 		}
 	}
 	
-	public void moveTile(int tileID, Move move) {	// tries to move tile
+	public void moveTile(String tileID, Move move) {	// tries to move tile
 		int tileIndex= -1;
 		int emptyIndex = -1;
 		for(int i =0; i<9; i++) {
-			if(tiles.get(i).getID() == tileID) { // find the tile 'i' with id == tileID
+			if(tileID.equals(tiles.get(i).getID())) { // find the tile 'i' with id == tileID
 				tileIndex = i;
 			}
 			if(tiles.get(i).getMove() == Move.EMPTY) {
@@ -96,14 +94,17 @@ public class Board {
 	
 	// constructors
 	Board(){														// default constructor - creates board with 9 tiles (1 tile is empty)
-		int id = 1;
+		Integer id = 1;
+		String stringID = "1";
 		for(int i =0; i<9; i++) {		
 			if(id == 9) {
-				tiles.add(new Tile(0, Move.EMPTY));
+				tiles.add(new Tile("0", Move.EMPTY));
 				break;
 			}
-			tiles.add(new Tile(id, Move.NONE));
+
+			tiles.add(new Tile(stringID, Move.NONE));
 			id++;
+			stringID = id.toString();
 		}
 		setMoves();
 	}
