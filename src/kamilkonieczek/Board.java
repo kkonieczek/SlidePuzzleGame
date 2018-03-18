@@ -33,19 +33,6 @@ public class Board {
 		}
 	}
 	
-	public void drawMoves(){								// Auxiliary method for drawing possible moves of tiles
-		int k = 0;
-		System.out.println("-----------------------------");
-		for(int i = 0 ; i <3; i++) {
-			for(int j = 0 ; j <3; j++) {
-				System.out.printf("|| %5s ", tiles.get(k).getMove());
-				k++;
-			}
-			System.out.println("||");
-			System.out.println("-----------------------------");
-		}
-	}
-	
 	public void moveTile(int tileID, Move move) {	// tries to move tile
 		int tileIndex= -1;
 		int emptyIndex = -1;
@@ -120,38 +107,6 @@ public class Board {
 		}
 		setMoves();
 	}
-	
 }
 
-class Tile{	// a board is composed of 9 tiles
-	
-	// private fields
-	private int id;
-	private Move move;
-	
-	// public methods
-	public int getID() {
-		return this.id;
-	}
-	public void setID(int id) {
-		this.id = id;
-	}
-	public Move getMove() {
-		return move;
-	}
-	public void setMove(Move move) {
-		this.move = move;
-	}	
-	
-	// constructors
-	Tile(){
-		this.id = 0;
-		this.setMove(Move.NONE);
-	}
-	
-	Tile(int id, Move move){
-		this.id = id;
-		this.setMove(move);
-	}
 
-}
