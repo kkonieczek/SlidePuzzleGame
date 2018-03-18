@@ -12,7 +12,7 @@ public class Board {
 	
 	
 	// private fields
-	private ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
+	public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
 	
 	//public methods	
 	public void shuffleBoard(){								// makes random arrangement of tiles
@@ -47,7 +47,6 @@ public class Board {
 	}
 	
 	public void moveTile(int tileID, Move move) {	// tries to move tile
-		
 		int tileIndex= -1;
 		int emptyIndex = -1;
 		for(int i =0; i<9; i++) {
@@ -58,12 +57,10 @@ public class Board {
 				emptyIndex = i;
 			}
 		}
-		
 		if(tileIndex == -1 || emptyIndex == -1 || move == Move.NONE || move == Move.EMPTY) {
 			System.out.println("Error");
 			return;
 		}
-
 		if(tiles.get(tileIndex).getMove() == move) { // check if the 'move' is possible			
 			replaceTiles(tileIndex, emptyIndex);	// replace tiles			
 			setMoves();								// set possible moves for each tile 
@@ -71,7 +68,7 @@ public class Board {
 	}
 	
 	// private methods	
-	private void replaceTiles(int indexA, int indexB) {		// check if this can be simplified
+	private void replaceTiles(int indexA, int indexB) {		// ...check if this can be simplified
 		Tile dummy1 = tiles.get(indexA);
 		Tile dummy2 = tiles.get(indexB);
 		Tile dummy3 = dummy1;
@@ -82,29 +79,25 @@ public class Board {
 	}
 	
 	private void setMoves() {							// assigns possible move to each tile
-		
 		int emptyIndex=8;
 		for(int i =0; i<9; i++) {
 			if(tiles.get(i).getMove() == Move.EMPTY) {
 				emptyIndex = i;
 			}
 		}
-		
 		for(int i =0; i<9; i++) {
 			if(i == emptyIndex) {
 				continue;
 			}
 			tiles.get(i).setMove(Move.NONE);		// all tiles besides empty tile cannot move at first
-		}		
-		
+		}
 		if(emptyIndex - 1 > -1) {
 			tiles.get(emptyIndex - 1).setMove(Move.RIGHT); // tile to the left of the empty tile can move to the right
 			
 			if(emptyIndex - 3 > -1) {
 				tiles.get(emptyIndex - 3).setMove(Move.DOWN); // tile above the empty tile can move down
 			}
-		}	
-		
+		}
 		if(emptyIndex + 1 < 9) {
 			tiles.get(emptyIndex + 1).setMove(Move.LEFT); // tile to the right of the empty tile can move to the left
 			
@@ -140,15 +133,12 @@ class Tile{	// a board is composed of 9 tiles
 	public int getID() {
 		return this.id;
 	}
-	
 	public void setID(int id) {
 		this.id = id;
 	}
-	
 	public Move getMove() {
 		return move;
 	}
-
 	public void setMove(Move move) {
 		this.move = move;
 	}	

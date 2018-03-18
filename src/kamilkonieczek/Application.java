@@ -2,7 +2,7 @@ package kamilkonieczek;
 
 import java.util.Scanner;
 
-// This is application main class
+
 public class Application {
 
 	public static void main(String[] args) {		
@@ -36,7 +36,7 @@ public class Application {
 			move = translateMove(c);	        	
 	        board.moveTile(id, move); 
 	        board.drawBoard();
-	        // board.drawMoves();
+
 		}	
 		scan.close();
 	}
