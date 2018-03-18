@@ -43,7 +43,7 @@ public class Board {
 			}
 		}
 		if(tileIndex == -1 || emptyIndex == -1 || move == Move.NONE || move == Move.EMPTY) {
-			System.out.println("Error");
+			//System.out.println("Error");
 			return;
 		}
 		if(tiles.get(tileIndex).getMove() == move) { // check if the 'move' is possible			

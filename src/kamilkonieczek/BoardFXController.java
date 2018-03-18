@@ -64,14 +64,52 @@ public class BoardFXController {
     @FXML
     public void handleAction(ActionEvent e){
 
+        String tileID;
+        Move move;
+        int i=0;
+
         if(e.getSource() == button1){
+            i=0;
+        }
+        else if(e.getSource() == button2){
+            i=1;
+        }
+        else if(e.getSource() == button3){
+            i=2;
+        }
+        else if(e.getSource() == button4){
+            i=3;
+        }
+        else if(e.getSource() == button5){
+            i=4;
+        }
+        else if(e.getSource() == button6){
+            i=5;
+        }
+        else if(e.getSource() == button7){
+            i=6;
+        }
+        else if(e.getSource() == button8){
+            i=7;
+        }
+        else if(e.getSource() == button9){
+            i=8;
         }
 
-        if(e.getSource() == button2){
-        }
+        tileID = board.tiles.get(i).getID();
+        move = board.tiles.get(i).getMove();
+        board.moveTile(tileID, move);
 
-        if(e.getSource() == button3){
-        }
+        boardViewModel.setTile1(board.tiles.get(0).getID());
+        boardViewModel.setTile2(board.tiles.get(1).getID());
+        boardViewModel.setTile3(board.tiles.get(2).getID());
+        boardViewModel.setTile4(board.tiles.get(3).getID());
+        boardViewModel.setTile5(board.tiles.get(4).getID());
+        boardViewModel.setTile6(board.tiles.get(5).getID());
+        boardViewModel.setTile7(board.tiles.get(6).getID());
+        boardViewModel.setTile8(board.tiles.get(7).getID());
+        boardViewModel.setTile9(board.tiles.get(8).getID());
+
 
     }
 }

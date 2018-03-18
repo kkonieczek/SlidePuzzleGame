@@ -17,14 +17,14 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="button1" mnemonicParsing="false" text="Button" />
-      <Button fx:id="button2" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" />
-      <Button fx:id="button3" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" />
-      <Button fx:id="button4" mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
-      <Button fx:id="button5" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button fx:id="button6" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-      <Button fx:id="button7" mnemonicParsing="false" text="Button" GridPane.rowIndex="2" />
-      <Button fx:id="button8" mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <Button fx:id="button9" mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+      <Button fx:id="button1" mnemonicParsing="false" onAction="#handleAction" text="Button" />
+      <Button fx:id="button2" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.columnIndex="1" />
+      <Button fx:id="button3" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.columnIndex="2" />
+      <Button fx:id="button4" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.rowIndex="1" />
+      <Button fx:id="button5" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button fx:id="button6" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+      <Button fx:id="button7" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.rowIndex="2" />
+      <Button fx:id="button8" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Button fx:id="button9" mnemonicParsing="false" onAction="#handleAction" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="2" />
    </children>
 </GridPane>
