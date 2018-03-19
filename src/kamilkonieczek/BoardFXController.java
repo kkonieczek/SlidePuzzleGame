@@ -3,12 +3,13 @@ package kamilkonieczek;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 
 public class BoardFXController {
 
-
-
     @FXML
+    public GridPane gridPane;
     public Button button1;
     public Button button2;
     public Button button3;
@@ -25,9 +26,10 @@ public class BoardFXController {
     @FXML
     void initialize(){
 
-
         board.shuffleBoard();
         board.drawBoard();
+        double windowPrefHeight = 300;
+        double windowPrefWidth = 300;
 
         boardViewModel.setTile1(board.tiles.get(0).getID());
         boardViewModel.setTile2(board.tiles.get(1).getID());
@@ -39,17 +41,6 @@ public class BoardFXController {
         boardViewModel.setTile8(board.tiles.get(7).getID());
         boardViewModel.setTile9(board.tiles.get(8).getID());
 
-
-/*        button1.setText("1");
-        button2.setText("2");
-        button3.setText("3");
-        button4.setText("4");
-        button5.setText("5");
-        button6.setText("6");
-        button7.setText("7");
-        button8.setText("8");
-        button9.setText("9");*/
-
         button1.textProperty().bindBidirectional(boardViewModel.tile1Property());
         button2.textProperty().bindBidirectional(boardViewModel.tile2Property());
         button3.textProperty().bindBidirectional(boardViewModel.tile3Property());
@@ -59,6 +50,21 @@ public class BoardFXController {
         button7.textProperty().bindBidirectional(boardViewModel.tile7Property());
         button8.textProperty().bindBidirectional(boardViewModel.tile8Property());
         button9.textProperty().bindBidirectional(boardViewModel.tile9Property());
+
+        button1.setFont(Font.font(36));
+
+        gridPane.setPrefSize(windowPrefWidth , windowPrefHeight);
+        button1.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button2.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button3.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button4.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button5.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button6.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button7.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button8.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+        button9.setPrefSize(windowPrefHeight/3-10, windowPrefWidth/3-10);
+
+
     }
 
     @FXML
@@ -109,7 +115,6 @@ public class BoardFXController {
         boardViewModel.setTile7(board.tiles.get(6).getID());
         boardViewModel.setTile8(board.tiles.get(7).getID());
         boardViewModel.setTile9(board.tiles.get(8).getID());
-
 
     }
 }

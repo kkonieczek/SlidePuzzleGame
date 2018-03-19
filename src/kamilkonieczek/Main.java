@@ -23,7 +23,8 @@ public class Main extends Application {
 
 		window = primaryStage;
 		window.setTitle("Slide Puzzle Game");
-		window.setScene(new Scene(root, 300, 300));
+		window.setScene(new Scene(root));
+		window.setResizable(false);
 		window.show();
 	}
 }
