@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="img11" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/11.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img12" fitHeight="150.0" fitWidth="200.0" layoutX="173.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/12.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img13" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/13.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img21" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/21.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img22" fitHeight="150.0" fitWidth="200.0" layoutX="173.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/22.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img23" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/23.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img31" fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/31.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img32" fitHeight="150.0" fitWidth="200.0" layoutX="173.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/32.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img33" fitHeight="150.0" fitWidth="200.0" layoutX="323.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@cat/33.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
