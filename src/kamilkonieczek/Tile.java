@@ -4,6 +4,12 @@ public class Tile{	// a board is composed of 9 tiles
 
     // private fields
     private String id;
+    private int No;
+
+    public int getNo() {
+        return No;
+    }
+
     private Move move;
 
     // public methods
@@ -29,6 +35,11 @@ public class Tile{	// a board is composed of 9 tiles
     Tile(String id, Move move){
         this.id = id;
         this.setMove(move);
+    }
+
+    Tile(String id, Move move, int No){
+        this(id, move);
+        this.No = No;
     }
 
 }

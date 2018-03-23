@@ -26,8 +26,8 @@ public class TilesPosArray {
 
     public void calcTilePos(){
         for(int i =0; i<9; i++){
-            tilePosX[i] = (tileOrder[i]%3)* tileWidth;
-            tilePosY[i] = (tileOrder[i]/3)* tileHeitht;
+            tilePosX[i] = (tileOrder[i]%3)* tileWidth + widthOffset;
+            tilePosY[i] = (tileOrder[i]/3)* tileHeitht + heightOffset;
         }
     }
 

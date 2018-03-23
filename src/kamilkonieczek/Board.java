@@ -8,11 +8,20 @@ import java.util.Collections;
  */
 
 public class Board {
-	// public fields
+
+	public int[] getTilesOrder() {
+
+		for(int i =0; i<9; i++){
+			tilesOrder[i]=tiles.get(i).getNo();
+		}
+
+		return tilesOrder;
+	}
+
+	private int[] tilesOrder = {0,1,2,3,4,5,6,7,8};
 
 	public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
-	
-	//public methods	
+
 	public void shuffleBoard(){								// makes random arrangement of tiles
 		Collections.shuffle(tiles);
 		setMoves();
@@ -98,11 +107,11 @@ public class Board {
 		String stringID = "1";
 		for(int i =0; i<9; i++) {		
 			if(id == 9) {
-				tiles.add(new Tile("0", Move.EMPTY));
+				tiles.add(new Tile("0", Move.EMPTY, id-1));
 				break;
 			}
 
-			tiles.add(new Tile(stringID, Move.NONE));
+			tiles.add(new Tile(stringID, Move.NONE, id-1));
 			id++;
 			stringID = id.toString();
 		}
