@@ -4,7 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 
-public class BoardFXImgsCtrlr {
+public class ImgBoardFXCtrlr {
 
     @FXML
     public ImageView img11;
@@ -19,10 +19,10 @@ public class BoardFXImgsCtrlr {
 
     @FXML
     void initialize(){
-        img11.setX(100);
+        img11.setX(0);
         img11.setY(0);
-        img21.setX(0);
-        img21.setY(0);
+        img12.setX(0);
+        img12.setY(0);
     }
 
     @FXML

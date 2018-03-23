@@ -19,7 +19,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws Exception {
 
 		FXMLLoader loader = new FXMLLoader();
-		Parent root = loader.load(getClass().getResource("BoardFXImgs.fxml"));
+		Parent root = loader.load(getClass().getResource("ImgBoardFX.fxml"));
 
 		window = primaryStage;
 		window.setTitle("Slide Puzzle Game");
