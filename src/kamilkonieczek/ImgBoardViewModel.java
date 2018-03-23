@@ -15,6 +15,16 @@ public class ImgBoardViewModel {
     private DoubleProperty img32X = new SimpleDoubleProperty();
     private DoubleProperty img33X = new SimpleDoubleProperty();
 
+    private DoubleProperty img11Y = new SimpleDoubleProperty();
+    private DoubleProperty img12Y = new SimpleDoubleProperty();
+    private DoubleProperty img13Y = new SimpleDoubleProperty();
+    private DoubleProperty img21Y = new SimpleDoubleProperty();
+    private DoubleProperty img22Y = new SimpleDoubleProperty();
+    private DoubleProperty img23Y = new SimpleDoubleProperty();
+    private DoubleProperty img31Y = new SimpleDoubleProperty();
+    private DoubleProperty img32Y = new SimpleDoubleProperty();
+    private DoubleProperty img33Y = new SimpleDoubleProperty();
+
     public double getImg11X() {
         return img11X.get();
     }
@@ -231,13 +241,5 @@ public class ImgBoardViewModel {
         this.img33Y.set(img33Y);
     }
 
-    private DoubleProperty img11Y = new SimpleDoubleProperty();
-    private DoubleProperty img12Y = new SimpleDoubleProperty();
-    private DoubleProperty img13Y = new SimpleDoubleProperty();
-    private DoubleProperty img21Y = new SimpleDoubleProperty();
-    private DoubleProperty img22Y = new SimpleDoubleProperty();
-    private DoubleProperty img23Y = new SimpleDoubleProperty();
-    private DoubleProperty img31Y = new SimpleDoubleProperty();
-    private DoubleProperty img32Y = new SimpleDoubleProperty();
-    private DoubleProperty img33Y = new SimpleDoubleProperty();
+
 }

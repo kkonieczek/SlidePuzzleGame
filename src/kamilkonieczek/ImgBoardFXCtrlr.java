@@ -6,14 +6,22 @@ import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ImgBoardFXCtrlr {
 
-    ImgBoardViewModel imgBoardViewModel = new ImgBoardViewModel();
+    private ImgBoardViewModel imgBoardViewModel = new ImgBoardViewModel();
+    private Board board = new Board();
+    private TilesPosArray tilesPosArray = new TilesPosArray(150, 150, 25, 25);
+    private int[] tilesOrder = {8,1,2,3,4,5,6,7,0};
+    private double[] xPos = new double[9];
+    private double[] yPos = new double[9];
 
-    //ArrayList<DoubleProperty> imgPropArray = new  ArrayList<DoubleProperty>();
+    private ArrayList<DoubleProperty> imgXPropArray = new  ArrayList<DoubleProperty>();
+    private Iterator<DoubleProperty> imgXPropArrayIter = imgXPropArray.iterator();
 
-    
+
+
 
     @FXML
     public ImageView img11;
@@ -28,6 +36,15 @@ public class ImgBoardFXCtrlr {
 
     @FXML
     void initialize(){
+
+        board.shuffleBoard();
+        board.drawBoard();
+
+        tilesPosArray.setTileOrder(tilesOrder);
+        tilesPosArray.calcTilePos();
+        xPos = tilesPosArray.getTilePosX();
+        yPos = tilesPosArray.getTilePosY();
+
         img11.setLayoutX(0);
         img12.setLayoutX(0);
         img13.setLayoutX(0);
@@ -48,25 +65,28 @@ public class ImgBoardFXCtrlr {
         img32.setLayoutY(0);
         img33.setLayoutY(0);
 
-        imgBoardViewModel.setImg11X(25);
-        imgBoardViewModel.setImg12X(175);
-        imgBoardViewModel.setImg13X(325);
-        imgBoardViewModel.setImg21X(25);
-        imgBoardViewModel.setImg22X(175);
-        imgBoardViewModel.setImg23X(325);
-        imgBoardViewModel.setImg31X(25);
-        imgBoardViewModel.setImg32X(175);
-        imgBoardViewModel.setImg33X(325);
+        imgXPropArray.ensureCapacity(9);
 
-        imgBoardViewModel.setImg11Y(25);
-        imgBoardViewModel.setImg12Y(25);
-        imgBoardViewModel.setImg13Y(25);
-        imgBoardViewModel.setImg21Y(175);
-        imgBoardViewModel.setImg22Y(175);
-        imgBoardViewModel.setImg23Y(175);
-        imgBoardViewModel.setImg31Y(325);
-        imgBoardViewModel.setImg32Y(325);
-        imgBoardViewModel.setImg33Y(325);
+
+        imgBoardViewModel.setImg11X(xPos[0]);
+        imgBoardViewModel.setImg12X(xPos[1]);
+        imgBoardViewModel.setImg13X(xPos[2]);
+        imgBoardViewModel.setImg21X(xPos[3]);
+        imgBoardViewModel.setImg22X(xPos[4]);
+        imgBoardViewModel.setImg23X(xPos[5]);
+        imgBoardViewModel.setImg31X(xPos[6]);
+        imgBoardViewModel.setImg32X(xPos[7]);
+        imgBoardViewModel.setImg33X(xPos[8]);
+
+        imgBoardViewModel.setImg11Y(yPos[0]);
+        imgBoardViewModel.setImg12Y(yPos[1]);
+        imgBoardViewModel.setImg13Y(yPos[2]);
+        imgBoardViewModel.setImg21Y(yPos[3]);
+        imgBoardViewModel.setImg22Y(yPos[4]);
+        imgBoardViewModel.setImg23Y(yPos[5]);
+        imgBoardViewModel.setImg31Y(yPos[6]);
+        imgBoardViewModel.setImg32Y(yPos[7]);
+        imgBoardViewModel.setImg33Y(yPos[8]);
 
         img11.xProperty().bindBidirectional(imgBoardViewModel.img11XProperty());
         img12.xProperty().bindBidirectional(imgBoardViewModel.img12XProperty());
