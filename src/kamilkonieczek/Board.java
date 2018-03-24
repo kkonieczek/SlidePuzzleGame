@@ -9,18 +9,16 @@ import java.util.Collections;
 
 public class Board {
 
-	public int[] getTilesOrder() {
+    public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
 
+    private int[] tilesOrder = {0,1,2,3,4,5,6,7,8};
+	public int[] getTilesOrder() {
 		for(int i =0; i<9; i++){
 			tilesOrder[i]=tiles.get(i).getNo();
 		}
-
 		return tilesOrder;
 	}
 
-	private int[] tilesOrder = {0,1,2,3,4,5,6,7,8};
-
-	public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
 
 	public void shuffleBoard(){								// makes random arrangement of tiles
 		Collections.shuffle(tiles);
@@ -60,8 +58,7 @@ public class Board {
 			setMoves();								// set possible moves for each tile 
 		}
 	}
-	
-	// private methods	
+
 	private void replaceTiles(int indexA, int indexB) {		// ...check if this can be simplified
 		Tile dummy1 = tiles.get(indexA);
 		Tile dummy2 = tiles.get(indexB);
@@ -75,7 +72,7 @@ public class Board {
 	private void setMoves() {							// assigns possible move to each tile
 		int emptyIndex=8;
 		for(int i =0; i<9; i++) {
-			if(tiles.get(i).getMove() == Move.EMPTY) {
+			if(tiles.get(i).getMove() == Move.EMPTY) { //finds empty tile
 				emptyIndex = i;
 			}
 		}
@@ -101,19 +98,19 @@ public class Board {
 		}
 	}
 	
-	// constructors
-	Board(){														// default constructor - creates board with 9 tiles (1 tile is empty)
-		Integer id = 1;
-		String stringID = "1";
+
+	Board(){		// default constructor - creates board with 9 tiles (1 tile is empty)
+		Integer No = 0;
+		String stringID = "0";
 		for(int i =0; i<9; i++) {		
-			if(id == 9) {
-				tiles.add(new Tile("0", Move.EMPTY, id-1));
+			if(No == 8) {
+				tiles.add(new Tile("8", Move.EMPTY, No));
 				break;
 			}
 
-			tiles.add(new Tile(stringID, Move.NONE, id-1));
-			id++;
-			stringID = id.toString();
+			tiles.add(new Tile(stringID, Move.NONE, No));
+			No++;
+			stringID = No.toString();
 		}
 		setMoves();
 	}

@@ -2,34 +2,33 @@ package kamilkonieczek;
 
 public class Tile{	// a board is composed of 9 tiles
 
-    // private fields
+
     private String id;
-    private int No;
-
-    public int getNo() {
-        return No;
-    }
-
-    private Move move;
-
-    // public methods
     public String getID() {
         return this.id;
     }
     public void setID(String id) {
         this.id = id;
     }
+
+    private int No;
+    public int getNo() {
+        return this.No;
+    }
+
+    private Move move;
     public Move getMove() {
-        return move;
+        return this.move;
     }
     public void setMove(Move move) {
         this.move = move;
     }
 
-    // constructors
+
     Tile(){
         this.id = "0";
         this.setMove(Move.NONE);
+        this.No = 0;
     }
 
     Tile(String id, Move move){

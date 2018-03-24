@@ -37,7 +37,7 @@ public class ImgBoardFXCtrlr {
     @FXML
     void initialize(){
 
-        board.shuffleBoard();
+        //board.shuffleBoard();
         board.drawBoard();
         tilesOrder = board.getTilesOrder();
         tilesPosArray.setTileOrder(tilesOrder);
