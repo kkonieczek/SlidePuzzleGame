@@ -34,8 +34,6 @@ public class Board {
 	}
 
 
-
-
 	public void shuffleBoard(){								// makes random arrangement of tiles
 		Collections.shuffle(tiles);
 		setMoves();
@@ -72,6 +70,27 @@ public class Board {
 		if(tiles.get(tileIndex).getMove() == move) { // check if the 'move' is possible			
 			replaceTiles(tileIndex, emptyIndex);	// replace tiles			
 			setMoves();								// set possible moves for each tile 
+		}
+	}
+
+	public void moveTile(int No, Move move) {	// tries to move tile
+		int tileIndex= -1;
+		int emptyIndex = -1;
+		for(int i =0; i<9; i++) {
+			if(No == tiles.get(i).getNo()) { // find the tile 'i' with id == tileID
+				tileIndex = i;
+			}
+			if(tiles.get(i).getMove() == Move.EMPTY) {
+				emptyIndex = i;
+			}
+		}
+		if(tileIndex == -1 || emptyIndex == -1 || move == Move.NONE || move == Move.EMPTY) {
+			//System.out.println("Error");
+			return;
+		}
+		if(tiles.get(tileIndex).getMove() == move) { // check if the 'move' is possible
+			replaceTiles(tileIndex, emptyIndex);	// replace tiles
+			setMoves();								// set possible moves for each tile
 		}
 	}
 

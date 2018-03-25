@@ -4,15 +4,17 @@ import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeMap;
 
 public class ImgBoardFXCtrlr {
 
     private ImgBoardViewModel imgBoardViewModel = new ImgBoardViewModel();
     private Board board = new Board();
-    private TilesPosArray tilesPosArray = new TilesPosArray(150, 150, 0, 0);
+    private TilesPosArray tilesPosArray = new TilesPosArray(150, 150, 25, 25);
     private int[] tilesOrder = {0,1,2,3,4,5,6,7,8};
     private double[] xPos = new double[9];
     private double[] yPos = new double[9];
@@ -110,9 +112,70 @@ public class ImgBoardFXCtrlr {
     }
 
     @FXML
-    public void handleAction(){
+    public void handleAction(MouseEvent e){
 
-        System.out.println("test");
+        int No=0;
+        Move move;
+        int i;
+        TreeMap<Integer, Integer> tileMap = board.getTileMap();
+
+        if(e.getSource() == img11){
+            No = 0;
+        }
+        else if(e.getSource() == img12){
+            No = 1;
+        }
+        else if(e.getSource() == img13){
+            No = 2;
+        }
+        else if(e.getSource() == img21){
+            No = 3;
+        }
+        else if(e.getSource() == img22){
+            No = 4;
+        }
+        else if(e.getSource() == img23){
+            No = 5;
+        }
+        else if(e.getSource() == img31){
+            No = 6;
+        }
+        else if(e.getSource() == img32){
+            No = 7;
+        }
+        else if(e.getSource() == img33){
+            No = 8;
+        }
+
+        i = tileMap.get(No);
+        move = board.tiles.get(i).getMove();
+        System.out.println("i =  " + i + " move " + No + " " + move);
+        board.moveTile(No, move);
+        tilesOrder = board.getTilesOrder();
+        tilesPosArray.setTileOrder(tilesOrder);
+        tilesPosArray.calcTilePos();
+        xPos = tilesPosArray.getTilePosX();
+        yPos = tilesPosArray.getTilePosY();
+
+        imgBoardViewModel.setImg11X(xPos[0]);
+        imgBoardViewModel.setImg12X(xPos[1]);
+        imgBoardViewModel.setImg13X(xPos[2]);
+        imgBoardViewModel.setImg21X(xPos[3]);
+        imgBoardViewModel.setImg22X(xPos[4]);
+        imgBoardViewModel.setImg23X(xPos[5]);
+        imgBoardViewModel.setImg31X(xPos[6]);
+        imgBoardViewModel.setImg32X(xPos[7]);
+        imgBoardViewModel.setImg33X(xPos[8]);
+
+        imgBoardViewModel.setImg11Y(yPos[0]);
+        imgBoardViewModel.setImg12Y(yPos[1]);
+        imgBoardViewModel.setImg13Y(yPos[2]);
+        imgBoardViewModel.setImg21Y(yPos[3]);
+        imgBoardViewModel.setImg22Y(yPos[4]);
+        imgBoardViewModel.setImg23Y(yPos[5]);
+        imgBoardViewModel.setImg31Y(yPos[6]);
+        imgBoardViewModel.setImg32Y(yPos[7]);
+        imgBoardViewModel.setImg33Y(yPos[8]);
 
     }
 }
