@@ -2,6 +2,7 @@ package kamilkonieczek;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.TreeMap;
 
 /*
  * class Board is composed of 9 tiles
@@ -12,12 +13,27 @@ public class Board {
     public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
 
     private int[] tilesOrder = {0,1,2,3,4,5,6,7,8};
+
 	public int[] getTilesOrder() {
+		updateTileMap();
 		for(int i =0; i<9; i++){
-			tilesOrder[i]=tiles.get(i).getNo();
+			tilesOrder[i]=tileMap.get(i);
 		}
 		return tilesOrder;
 	}
+
+	private TreeMap<Integer, Integer> tileMap = new TreeMap<Integer, Integer>();
+	public void updateTileMap(){
+		for(int i =0; i<9; i++){
+			tileMap.put(tiles.get(i).getNo(), i);
+		}
+	}
+	public TreeMap<Integer, Integer> getTileMap() {
+		updateTileMap();
+		return tileMap;
+	}
+
+
 
 
 	public void shuffleBoard(){								// makes random arrangement of tiles
@@ -105,10 +121,12 @@ public class Board {
 		for(int i =0; i<9; i++) {		
 			if(No == 8) {
 				tiles.add(new Tile("8", Move.EMPTY, No));
+				tileMap.put(No, i);
 				break;
 			}
 
 			tiles.add(new Tile(stringID, Move.NONE, No));
+			tileMap.put(No, i);
 			No++;
 			stringID = No.toString();
 		}

@@ -6,47 +6,47 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kamilkonieczek.ImgBoardFXCtrlr">
    <children>
-      <ImageView fx:id="img11" fitHeight="150.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img11" fitHeight="150.0" layoutX="25.0" layoutY="25.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/11.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img12" fitHeight="150.0" layoutX="175.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img12" fitHeight="150.0" layoutX="175.0" layoutY="25.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/12.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img13" fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img13" fitHeight="150.0" fitWidth="200.0" layoutX="325.0" layoutY="25.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/13.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img21" fitHeight="150.0" layoutX="25.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img21" fitHeight="150.0" layoutX="25.0" layoutY="175.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/21.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img22" fitHeight="150.0" layoutX="175.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img22" fitHeight="150.0" layoutX="175.0" layoutY="175.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/22.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img23" fitHeight="150.0" layoutX="325.0" layoutY="175.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img23" fitHeight="150.0" layoutX="325.0" layoutY="175.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/23.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img31" fitHeight="150.0" layoutX="25.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img31" fitHeight="150.0" layoutX="25.0" layoutY="325.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/31.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img32" fitHeight="150.0" layoutX="175.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img32" fitHeight="150.0" layoutX="175.0" layoutY="325.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/32.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="img33" fitHeight="150.0" layoutX="325.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img33" fitHeight="150.0" layoutX="325.0" layoutY="325.0" onMouseClicked="#handleAction" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@cat/33.jpg" />
          </image>

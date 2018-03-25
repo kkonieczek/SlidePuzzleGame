@@ -110,7 +110,9 @@ public class ImgBoardFXCtrlr {
     }
 
     @FXML
-    public void handleAction(ActionEvent e){
+    public void handleAction(){
+
+        System.out.println("test");
 
     }
 }
