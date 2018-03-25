@@ -12,7 +12,7 @@ public class ImgBoardFXCtrlr {
 
     private ImgBoardViewModel imgBoardViewModel = new ImgBoardViewModel();
     private Board board = new Board();
-    private TilesPosArray tilesPosArray = new TilesPosArray(150, 150, 25, 25);
+    private TilesPosArray tilesPosArray = new TilesPosArray(150, 150, 0, 0);
     private int[] tilesOrder = {0,1,2,3,4,5,6,7,8};
     private double[] xPos = new double[9];
     private double[] yPos = new double[9];
@@ -37,7 +37,7 @@ public class ImgBoardFXCtrlr {
     @FXML
     void initialize(){
 
-        //board.shuffleBoard();
+        board.shuffleBoard();
         board.drawBoard();
         tilesOrder = board.getTilesOrder();
         tilesPosArray.setTileOrder(tilesOrder);
