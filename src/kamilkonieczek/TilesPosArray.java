@@ -6,7 +6,7 @@ public class TilesPosArray {
     private double tileWidth;
     private double heightOffset;
     private double widthOffset;
-    
+
     TilesPosArray(double tileWidth, double tileHeight, double heightOffset, double widthOffset){
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;

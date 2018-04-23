@@ -42,7 +42,7 @@ public class ImgBoardFXCtrlr {
         xPos = tilesPosArray.getTilePosX();
         yPos = tilesPosArray.getTilePosY();
 
-        //
+        //set images absolute position to the the upper left corner
         img11.setLayoutX(0);
         img12.setLayoutX(0);
         img13.setLayoutX(0);
@@ -63,7 +63,7 @@ public class ImgBoardFXCtrlr {
         img32.setLayoutY(0);
         img33.setLayoutY(0);
 
-
+        //set properties values according to the calculated positions
         imgBoardViewModel.setImg11X(xPos[0]);
         imgBoardViewModel.setImg12X(xPos[1]);
         imgBoardViewModel.setImg13X(xPos[2]);
@@ -84,6 +84,7 @@ public class ImgBoardFXCtrlr {
         imgBoardViewModel.setImg32Y(yPos[7]);
         imgBoardViewModel.setImg33Y(yPos[8]);
 
+        //bind properties to the images location properties
         img11.xProperty().bindBidirectional(imgBoardViewModel.img11XProperty());
         img12.xProperty().bindBidirectional(imgBoardViewModel.img12XProperty());
         img13.xProperty().bindBidirectional(imgBoardViewModel.img13XProperty());
