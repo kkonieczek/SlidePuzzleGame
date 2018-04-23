@@ -19,21 +19,21 @@ public class TilesPosArray {
         this.tileOrder = tileOrder;
     }
 
-    private double tileHeitht=100;
-    private double tileWidth=100;
-    private double heightOffset=0;
-    private double widthOffset=0;
+    private double tileHeight;
+    private double tileWidth;
+    private double heightOffset;
+    private double widthOffset;
 
     public void calcTilePos(){
         for(int i =0; i<9; i++){
             tilePosX[i] = (tileOrder[i]%3)* tileWidth + widthOffset;
-            tilePosY[i] = (tileOrder[i]/3)* tileHeitht + heightOffset;
+            tilePosY[i] = (tileOrder[i]/3)* tileHeight + heightOffset;
         }
     }
 
-    TilesPosArray(double tileWidth, double tileHeitht, double heightOffset, double widthOffset){
+    TilesPosArray(double tileWidth, double tileHeight, double heightOffset, double widthOffset){
         this.tileWidth = tileWidth;
-        this.tileHeitht = tileHeitht;
+        this.tileHeight = tileHeight;
         this.widthOffset = widthOffset;
         this.heightOffset = heightOffset;
     }

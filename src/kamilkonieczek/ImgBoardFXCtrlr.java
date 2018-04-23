@@ -19,11 +19,6 @@ public class ImgBoardFXCtrlr {
     private double[] xPos = new double[9];
     private double[] yPos = new double[9];
 
-    private ArrayList<DoubleProperty> imgXPropArray = new  ArrayList<DoubleProperty>();
-    private Iterator<DoubleProperty> imgXPropArrayIter = imgXPropArray.iterator();
-
-
-
 
     @FXML
     public ImageView img11;
@@ -47,6 +42,7 @@ public class ImgBoardFXCtrlr {
         xPos = tilesPosArray.getTilePosX();
         yPos = tilesPosArray.getTilePosY();
 
+        //
         img11.setLayoutX(0);
         img12.setLayoutX(0);
         img13.setLayoutX(0);
@@ -66,8 +62,6 @@ public class ImgBoardFXCtrlr {
         img31.setLayoutY(0);
         img32.setLayoutY(0);
         img33.setLayoutY(0);
-
-        imgXPropArray.ensureCapacity(9);
 
 
         imgBoardViewModel.setImg11X(xPos[0]);

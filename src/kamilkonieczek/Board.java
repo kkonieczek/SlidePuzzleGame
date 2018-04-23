@@ -12,45 +12,23 @@ public class Board {
 
     public ArrayList<Tile> tiles = new ArrayList<Tile>();	// array of tiles
 
-	public int[] getTilesOrder() {
-		updateTileMap();
-        int[] tilesOrder = new int[9];
-		for(int i =0; i<9; i++){
-			tilesOrder[i]=tileMap.get(i);
-		}
-		return tilesOrder;
-	}
+    public void shuffleBoard(){							// makes random arrangement of tiles
+        Collections.shuffle(tiles);
+        setMoves();
+    }
+    public void drawBoard(){							// draws board in the console
+        int k = 0;
+        System.out.println("-----------------");
+        for(int i = 0 ; i <3; i++) {
+            for(int j = 0 ; j <3; j++) {
+                System.out.printf("|| %s ", tiles.get(k).getID());
+                k++;
+            }
+            System.out.println("||");
+            System.out.println("-----------------");
+        }
+    }
 
-	private TreeMap<Integer, Integer> tileMap = new TreeMap<Integer, Integer>();
-	public void updateTileMap(){
-		for(int i =0; i<9; i++){
-			tileMap.put(tiles.get(i).getNo(), i);
-		}
-	}
-	public TreeMap<Integer, Integer> getTileMap() {
-		updateTileMap();
-		return tileMap;
-	}
-
-
-	public void shuffleBoard(){								// makes random arrangement of tiles
-		Collections.shuffle(tiles);
-		setMoves();
-	}
-	
-	public void drawBoard(){								// draws board
-		int k = 0;
-		System.out.println("-----------------");
-		for(int i = 0 ; i <3; i++) {
-			for(int j = 0 ; j <3; j++) {
-				System.out.printf("|| %s ", tiles.get(k).getID());
-				k++;
-			}
-			System.out.println("||");
-			System.out.println("-----------------");
-		}
-	}
-	
 	public void moveTile(String tileID, Move move) {	// tries to move tile
 		int tileIndex= -1;
 		int emptyIndex = -1;
@@ -131,7 +109,26 @@ public class Board {
 			}	
 		}
 	}
-	
+
+    private TreeMap<Integer, Integer> tileMap = new TreeMap<Integer, Integer>(); // tile position mapped to tile No.
+
+    public void updateTileMap(){
+        for(int i =0; i<9; i++){
+            tileMap.put(tiles.get(i).getNo(), i);
+        }
+    }
+    public TreeMap<Integer, Integer> getTileMap() {
+        updateTileMap();
+        return tileMap;
+    }
+    public int[] getTilesOrder() {
+        updateTileMap();
+        int[] tilesOrder = new int[9];
+        for(int i =0; i<9; i++){
+            tilesOrder[i]=tileMap.get(i);
+        }
+        return tilesOrder;
+    }
 
 	Board(){		// default constructor - creates board with 9 tiles (1 tile is empty)
 		Integer No = 0;
@@ -142,7 +139,6 @@ public class Board {
 				tileMap.put(No, i);
 				break;
 			}
-
 			tiles.add(new Tile(stringID, Move.NONE, No));
 			tileMap.put(No, i);
 			No++;
